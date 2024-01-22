@@ -1,0 +1,59 @@
+<body class="bg">
+<a routerLink="/dash-board2" class="custom-button">
+  <div class="button-content">
+    <i class="fas fa-thermometer-half"></i>
+    <span>Return</span>
+  </div>
+</a>
+
+<h1 class="title"> Elderly Dashboard</h1>
+
+
+<mat-table class="table"   [dataSource]="elderlies">
+    <!-- Define the columns -->
+    <ng-container matColumnDef="ID">
+      <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+      <mat-cell *matCellDef="let elderlies">{{ elderlies.ID }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let elderlies">{{ elderlies.name }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="surname">
+      <mat-header-cell *matHeaderCellDef>Surname</mat-header-cell>
+      <mat-cell *matCellDef="let elderlies">{{ elderlies.surname }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="age">
+      <mat-header-cell *matHeaderCellDef>Age</mat-header-cell>
+      <mat-cell *matCellDef="let elderlies">{{ elderlies.age }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="present">
+      <mat-header-cell *matHeaderCellDef>Present</mat-header-cell>
+      <mat-cell *matCellDef="let elderlies">{{ elderlies.present }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Bodytemperature">
+      <mat-header-cell *matHeaderCellDef>Body Temperature</mat-header-cell>
+      <mat-cell *matCellDef="let elderlies">{{ elderlies.Bodytemperature }}</mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+
+
+<div class="chart-container" >
+  <h2 class="graph">The presence of the elderlies : </h2>
+  <canvas #pieChart></canvas>
+</div>
+
+<div class="barchart" >
+  <h2 class="graph">The body temperature of the elderlies : </h2>
+  <canvas #barChart></canvas>
+</div>
+</body>

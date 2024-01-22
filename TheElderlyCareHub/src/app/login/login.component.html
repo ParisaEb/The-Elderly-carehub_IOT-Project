@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="gray-rectangle"></div>
+      <div class="orange-rectangle">
+        <div class="content">
+          <h2>Welcome to Elderly Care Hub</h2>
+          <form (ngSubmit)="login()" #loginForm="ngForm" class="login-form">
+            <div class="form-group">
+              <label for="email">YOUR EMAIL:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                [(ngModel)]="user.email"
+                class="input"
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">YOUR PASSWORD:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                [(ngModel)]="user.password"
+                class="input"
+              />
+            </div>
+            <button type="submit" class="btn-login">Sign In</button>
+            <div *ngIf="errorMessage" class="error-message">
+              {{ errorMessage }}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="centered-text">
+      <p class="service-description">
+        Our service is all about <br />
+        <span class="highlight">caring, checking</span><br />
+        <span class="highlight">and monitoring </span>
+      </p>
+    </div>
+  </body>
+</html>

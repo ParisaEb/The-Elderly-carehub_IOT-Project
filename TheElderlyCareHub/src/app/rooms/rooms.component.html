@@ -1,0 +1,37 @@
+<body class="bg">
+
+<a routerLink="/dash-board2" class="custom-button">
+  <div class="button-content">
+    <i class="fas fa-thermometer-half"></i>
+    <span>Return</span>
+  </div>
+  
+</a>
+
+
+<h1 class="title"> Room Temperature Checking</h1>
+
+<mat-table [dataSource]="rooms">
+    <!-- Define the columns -->
+    <ng-container matColumnDef="OcupantName">
+      <mat-header-cell *matHeaderCellDef>Elderly Name</mat-header-cell>
+      <mat-cell *matCellDef="let room">{{ room.OcupantName }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="temperature">
+      <mat-header-cell *matHeaderCellDef>Room Temperature</mat-header-cell>
+      <mat-cell *matCellDef="let room">{{ room.temperature }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Fan_status">
+      <mat-header-cell *matHeaderCellDef>Fan Status</mat-header-cell>
+      <mat-cell *matCellDef="let room">{{ room.Fan_status }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+  
+  <img class="imghc" src="22.png" alt="img unloaded">
+
+</body>

@@ -1,0 +1,30 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Roboto", sans-serif; }
+
+.toast-success {
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 4px rgba(230, 223, 223, 0.2);
+    padding: 10px;
+    max-width: 300px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+.toast-info {
+    background-color: #0073CF;
+    color: white;
+    font-size: 12px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 4px rgba(230, 223, 223, 0.2);
+    padding: 10px;
+    max-width: 300px;
+    position: fixed;
+    bottom: 10px;
+
+  }
+
+
+
